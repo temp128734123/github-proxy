@@ -1,20 +1,18 @@
 package com.example.githubproxy.external.github.contract;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import java.util.Map;
 
+@AllArgsConstructor
+@Getter
+@EqualsAndHashCode
 public class Branch {
     private String name;
     private String lastCommitSha;
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLastCommitSha() {
-        return lastCommitSha;
-    }
 
     @JsonProperty("commit")
     private void extractCommitSha(Map<String, Object> commit) {

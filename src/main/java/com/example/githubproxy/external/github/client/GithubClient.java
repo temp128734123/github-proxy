@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(value = "github-api", url = "https://api.github.com")
+@FeignClient(value = "github-api", url = "${feign.github.url}")
 public interface GithubClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/users/{username}/repos")
